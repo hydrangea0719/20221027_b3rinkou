@@ -1,0 +1,14 @@
+\begin{thebibliography}{1}
+
+\bibitem{FFNN}
+Yoshua Bengio, R{\'e}jean Ducharme, Pascal Vincent, and Christian Jauvin.
+\newblock A neural probabilistic language model.
+\newblock {\em Journal of machine learning research}, 3(Feb):1137--1155, 2003.
+
+\bibitem{translate}
+Dzmitry Bahdanau, Kyunghyun Cho, and Yoshua Bengio.
+\newblock Neural machine translation by jointly learning to align and
+  translate.
+\newblock {\em arXiv preprint arXiv:1409.0473}, 2014.
+
+\end{thebibliography}
