@@ -68,5 +68,5 @@ https://github.com/hydrangea0719/20221027_b3rinkou/blob/main/1_資料の書き�
 資料の書き方について，森先生，岡田先生から別途指導があった場合はそちらに従ってください．  
 今後，発表資料などを提出する際は，書き方のルールを守れているかを自分で確認してから，先輩・先生に資料確認をお願いするようにしましょう！  
 
-1G github の manual にも「Tex の書き方」について掲載してあるので，確認してください．  
+1G github の manual にも「Tex の書き方」について掲載してあるので確認してください．  
 https://github.com/1g-hub/manual/blob/master/views/regulation/tex.md
