@@ -1,0 +1,81 @@
+%\documentstyle[epsf,twocolumn]{jarticle}       %LaTeX2e仕様
+%\documentclass[twocolumn]{jarticle}     %pLaTeX2e仕様(platex.exeの場合)
+%\documentclass[onecolumn]{jsarticle}     %pLaTeX2e仕様(uplatex.exeの場合)
+\documentclass[onecolumn]{jarticle} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%  基本バージョン
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\topmargin}{-45pt}
+%\setlength{\oddsidemargin}{0cm}
+\setlength{\oddsidemargin}{-7.5mm}
+%\setlength{\evensidemargin}{0cm}
+\setlength{\textheight}{24.1cm}
+%setlength{\textheight}{25cm}
+\setlength{\textwidth}{17.4cm}
+%\setlength{\textwidth}{172mm}
+\setlength{\columnsep}{11mm}
+
+%\kanjiskip=.07zw plus.5pt minus.5pt
+
+
+% 【節が変わるごとに (1.1)(1.2) … (2.1)(2.2) と数式番号をつけるとき】
+%\makeatletter
+%\renewcommand{\theequation}{%
+%\thesection.\arabic{equation}} %\@addtoreset{equation}{section}
+%\makeatother
+
+%\renewcommand{\arraystretch}{0.95} 行間の設定
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[dvipdfmx]{graphicx}   %pLaTeX2e仕様(\documentstyle ->\documentclass)
+\usepackage{amsmath}
+\usepackage{hhline}
+\usepackage{multirow}
+\usepackage[dvipdfmx]{hyperref}
+\usepackage{pxjahyper}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%bibtex用の設定
+\bibliographystyle{jplain}
+
+\noindent
+
+\hspace{1em}
+
+令和 4 年 10 月 27 日（木） ゼミ資料
+\hfill
+\ \ M1 一研 太郎
+
+\vspace{2mm}
+\hrule
+
+\begin{center}
+{\Large \bf 進捗報告}
+\end{center}
+
+
+\hrule
+\vspace{3mm}
+
+% ここから 文章 Start!
+\section{今週やったこと}
+\begin{itemize}
+\item hoge \vspace{-0.5em}
+\item foo
+\end{itemize}
+
+
+\section{hoge}
+\begin{enumerate}
+\item hoge \vspace{-0.5em}
+\item foo \vspace{-0.5em}
+\item baa
+\end{enumerate}	
+
+\section{foo}
+毎週のゼミで進捗報告する際に使ってください．
+
+\end{document}

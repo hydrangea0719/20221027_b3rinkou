@@ -1,0 +1,128 @@
+1G における資料の書き方注意点 2020年度版
+
+好みによる部分もありますが，可能な限り 1G では以下の記述に合わせて下さい．
+どうしても従いたくない学生は個別に担当教員に直訴して下さい．
+研究会の資料で，従っていない部分があった場合は修正し，年報に上げ直すこと．
+面倒くさい！と思った人は次は最初からきちんと書きましょう．
+上回生は自分の資料は当然として，後輩に指導もできるように．
+同じことを何度も注意するのは結構疲れるものなので，徹底して下さい．
+
+◎最優先事項
+絶対に盗用をしない．外部資料を参考にする場合には必ず引用をすること．
+図，スライドもそうだが，安易なコピペをしないこと．
+他人の資料の盗用は犯罪なので心しておくように．
+※ただし，要素技術の説明等に関して研究室内の資料内容を流用することは認める．
+
+研究室に配属されたばかりの学生はこれから書く資料に関して，以下の部分に十二分に留意して資料を書きましょう．
+
+・記号スペースはすべて半角．また，句読点は , . を使う．
+× ＧＡは
+○ GA は
+※ どこかの資料，スライドをパクってきた場合にこれを修正していない事例が頻発しています．
+参考にするのは構いませんが，混在しないように留意して下さい．普段は 、。で文を書きたい人は
+IME を 2 種類入れておくことをオススメします．
+(電気学会系はなぜか ，。です．覚えておきましょう)
+
+・文章中の半角記号の前後には半角スペースを入れる．
+× ここで$i$は
+○ ここで $i$ は
+※ これをしていない学生が多すぎる．前期はともかく後期資料に関しては，もう一度全チェックをすること．
+
+・図，表のラベルは行頭へ
+× 探索中のエントロピー変化を図 1 に示す．
+○ 図 1 に探索中のエントロピー変化を示す．
+
+・式は番号→式の順で
+× 式 (1)
+○ (1) 式
+※これは学会誌によっては式 (1) 形式の場合もあるので緩めの制約ですが，講座内では (1) 式形式で．
+当然，混在は許されません．
+
+・変数はイタリック，ラベル，関数名はローマン体で
+× sin(x) → 数式モードだと sin が斜体になる．斜体だと 
+                  s×i×n の意味になってしまう
+○\sin → これだとローマン体で出る．数式モード内のラベルの場合は
+               {\rm Label} という表記でローマン体にする．
+詳細は以下のサイトなどを参照して下さい．
+http://stars.sci.ibaraki.ac.jp/kaisetu/writing/kiji/phyq.html
+
+※人によってはまともな数学を習ったことがないのかと疑うレベルで違和感があります．
+引用文献との兼ね合いで，プログラム形式中の変数名など工学では例外がありますが，
+可能な限り上の例にしたがって下さい．
+
+・本文中にどこからか取ってきた図を使う場合には引用元を示す．
+例：(文献[～]の図 3 参照）
+
+・Qiita，Wikipedia, 個人のブログなどは本当にオリジナルの内容出ない限り引用文献とはしない．     
+
+・TeX でコンパイルをしたら必ず Warning チェックをすること．
+※ 引用抜けの ？ 等は修論であればそれだけを理由に単位を落とされても文句は言えないレベルのミスです．
+必ずすること．やり方がわからない人は先輩に効きましょう．
+
+・引用文献は bibtex を使う．
+
+bibtex は要は参考文献を共有するためのコマンドです．
+bibtex 形式でファイルを書いて，そこに参考文献をいれておけば，新しい TeX 
+ファイルで読み込むと使うものだけを勝手に引用してくれます．
+reference.bib というファイルに記述した場合は，
+以下 2 行で TeX 内の記述は終わりです．
+
+\bibliographystyle{junsrt}
+\bibliography{reference}
+
+コンパイルの仕方に少し癖があって，xyzzy で katex を使っているのなら
+
+C-c t j (jlatex で一度コンパイル)
+C-c t b (bibtex でコンパイル. *.bbl というファイルができる)
+C-c t j (jlatex で一度コンパイル．これで bbl ファイルを読み込んでくれる)
+
+でおkです．bbl ファイルは bibtex の度に更新されますが，直接編集すれば微調整が可能です．
+以下のサイト等を読めばわかるはず．
+     
+http://akita-nct.jp/yamamoto/comp/latex/bibtex/bibtex.html
+
+で，bib ファイルの書き方ですが，
+
+@incollection{hansen2006cma,
+  title={The CMA evolution strategy: a comparing review},
+  author={Hansen, Nikolaus},
+  booktitle={Towards a new evolutionary computation},
+  pages={75--102},
+  year={2006},
+  publisher={Springer}
+}
+
+こんな感じで，ファイルに書き込むと \cite{hansen2006cma} で上の内容が引用できます．
+長くて面倒な場合は hansen2006cma → hansen06 みたいに縮めても構いません．
+reference.bib では縮めてます．
+これを打ち込むのが面倒！と思うかもしれませんが，大体 Google で検索できます．
+例えば，Google で上のタイトル "The CMA Evolution Strategy: A Comparing Review"
+を検索してみて下さい．たぶん一番上に
+
+The CMA Evolution Strategy: A Comparing Review の学術記事
+
+というのが出るはずです．で，これをクリックすると
+
+The CMA evolution strategy: a comparing review
+N Hansen - Towards a new evolutionary computation, 2006 - Springer
+Summary Derived from the concept of self-adaptation in evolution strategies, the CMA 
+(Covariance Matrix Adaptation) adapts the covariance matrix of a multi-variate normal 
+search distribution. The CMA was originally designed to perform well with small ...
+引用元 841 関連記事 全 10 バージョン 引用 保存 その他みたいなところに進みます．ここで，一番下の引用元 841 関連記事 全 10 バージョン 引用 保存 その他　　
+　　　　　　　　　　　　　　　　＾＾＾この引用というのをクリックします．そうすると新しい引用
+という小窓が開いて引用情報がでます．この下の方に BibTeX というリンクがあるのでそれをクリックすると
+
+@incollection{hansen2006cma,
+  title={The CMA evolution strategy: a comparing review},
+  author={Hansen, Nikolaus},
+  booktitle={Towards a new evolutionary computation},
+  pages={75--102},
+  year={2006},
+  publisher={Springer}
+}
+
+と項目が表示されるのでコピペして終わりです．大概の論文はこれでいけます．
+ただし，bibtex をすれば完璧というわけではないので，最終版のチェックを怠らないように．
+1G は例年参考文献にクレームがつくことが多いので，十分注意して下さい．
+
+以上．
